@@ -1,0 +1,43 @@
+<!-- <div class="container">
+  <div class="content-container">
+    <div class="main-container" [ngClass]="{'main-container': true, 'main-movedown': isSlideUp}"></div>
+    <div [ngClass]="{'slide-container': true, 'slide-moveup': isSlideUp}"
+      [ngStyle]="{'transform-origin': (isSlideUp) ? 'center top' : 'center bottom'}">
+      <div [ngClass]="{'slide-background': true, 'slide-background-stay': isSlideUp}"></div>
+      <div [ngClass]="{'slide-content': true, 'slide-scale': isSlideScale, 'slide-container-reverse': isSlideUp}"
+        [ngStyle]="{'transform-origin': (isSlideUp) ? 'center top' : 'center bottom'}">
+        <div [ngClass]="{'slide-background': true, 'slide-background-stay': isSlideUp}"></div>
+        <div (click)="clickBtn()" [ngClass]="{'switch-btn': true, 'switch-btn-faded': isSlideScale}">Switch</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div [ngClass]="{'main-container': true, 'main-container-down': isSlideUp}">
+    <app-signup-form *ngIf="isMainChange"></app-signup-form>
+    <app-signin-form *ngIf="!isMainChange"></app-signin-form>
+  </div>
+  <div [ngClass]="{'slide-container': true, 'slide-container-up': isSlideUp}">
+    <div [ngClass]="{'background-slide-container': true}">
+      <div [ngClass]="{'first': true}">
+        <div [ngClass]="{'background-content': true}">
+          <div [ngClass]="{'header': true}">Welcome Back</div>
+          <div [ngClass]="{'description': true}">Please give me the info ehe!</div>
+        </div>
+      </div>
+      <div [ngClass]="{'second': true}"></div>
+      <div [ngClass]="{'third': true}">
+        <div [ngClass]="{'background-content': true}">
+          <div [ngClass]="{'header': true}">Hi Friend!</div>
+          <div [ngClass]="{'description': true}">Join us and enjoy the crazies!!</div>
+        </div>
+      </div>
+    </div>
+    <div [ngClass]="{'slide-content': true, 'slide-content-transform': isSlideUp}">
+      <div (click)="clickBtn()" [ngClass]="{'switch-btn': true}">
+        {{isSlideUp ? 'SIGN IN' : 'SIGN UP'}}
+      </div>
+    </div>
+  </div>
+</div>

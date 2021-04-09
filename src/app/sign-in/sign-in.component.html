@@ -1,0 +1,94 @@
+<!-- <div class="container">
+  <div class="slide-container">
+    <div class="slide">
+      <div class="signup-btn">Signup</div>
+    </div>
+    <div class="form-container">
+      <div class="section">
+        <div class="row">
+          <label for="username">
+            Username
+          </label>
+        </div>
+        <div class="row">
+          <input type="text" id="username" name="username" placeholder="Your username..">
+        </div>
+      </div>
+      <div class="section">
+        <div class="row">
+          <label for="password">
+            Password
+          </label>
+        </div>
+        <div class="row">
+          <input type="text" id="password" name="password" placeholder="Your password..">
+        </div>
+      </div>
+      <div class="section">
+        <div class="row">
+          <label for="server">
+            Server
+          </label>
+        </div>
+        <div class="row">
+          <select id="server" name="server">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+      </div>
+      <div class="section">
+        <input class="signin-btn" type="submit" value="Signin">
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="background-container">
+    <div class="background-part-1">
+      <div class="background-header">
+        <div class="background-header-title">Welcome Back</div>
+        <div class="background-header-desc">
+          Please give me the info. Me dont bite ehe!
+        </div>
+      </div>
+    </div>
+    <div class="background-part-2"></div>
+    <div class="background-part-3">
+      <div class="background-header">
+        <div class="background-header-title">Hi, Friend!</div>
+        <div class="background-header-desc">
+          Join us and enjoy the crazies!!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-container">
+    <div
+      [ngClass]="{'main1': true, 'main-1-half': isHalfSlide, 'main-1-full': isSlide}"
+    >
+      <app-signin-form></app-signin-form>
+    </div>
+    <div
+      class="slider"
+      [ngStyle]="{'width': (isHalfSlide && !isSlide) ? '50%' : '40%'}"
+    >
+      <div class="slider-body">
+        <div
+          class="slider-btn"
+          appDebounceClick
+          (debounceClick)="toggleSwitch()"
+          [debounceTime]="800"
+        >
+          Switch
+        </div>
+      </div>
+    </div>
+    <div
+      [ngClass]="{'main2': true, 'main-2-half': isHalfSlide, 'main-2-full': isSlide}"
+    >
+      <app-signup-form></app-signup-form>
+    </div>
+  </div>
+</div>
